@@ -1,0 +1,43 @@
+www.bloomclient.org {
+  redir https://bloomclient.org{uri} permanent
+}
+
+bloomclient.org {
+  encode zstd gzip
+
+  @account_api path /api/auth/* /v1/account/*
+  handle @account_api {
+    reverse_proxy 127.0.0.1:8110
+  }
+
+  @privacy_exact path /privacypolicy
+  handle @privacy_exact {
+    root * /opt/bloom-website/dist
+    rewrite * /privacypolicy/index.html
+    file_server
+  }
+
+  @terms_exact path /tos
+  handle @terms_exact {
+    root * /opt/bloom-website/dist
+    rewrite * /tos/index.html
+    file_server
+  }
+
+  handle {
+    root * /opt/bloom-website/dist
+    file_server
+  }
+
+  header {
+    X-Content-Type-Options nosniff
+    Referrer-Policy strict-origin-when-cross-origin
+    Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  }
+}
+
+api.north.bloomclient.org {
+  encode zstd gzip
+  reverse_proxy 127.0.0.1:8110
+}

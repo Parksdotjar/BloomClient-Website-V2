@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Manage your Bloom Client account and connected sign-in providers." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self' https://accounts.google.com https://github.com; frame-ancestors 'none'" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/account-header.js"></script>
+    <script type="module" src="/src/dashboard.js"></script>
+    <title>Dashboard — Bloom Client</title>
+  </head>
+  <body class="dashboard-body">
+    <a class="skip-link" href="#dashboard-main">Skip to dashboard</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/" aria-label="Bloom Client home"><img src="/bloom-flower.png" alt="" width="44" height="44" /><span>Bloom Client</span></a>
+        <nav aria-label="Primary navigation">
+          <a href="/#features"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>The client</a>
+          <a href="/changelog/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 8h6m-6 4h6m-6 4h4"/></svg>Changelog</a>
+          <a href="/tickets/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h14v5a3 3 0 0 0 0 6v5H5v-5a3 3 0 0 0 0-6V4Z"/><path d="M12 7v2m0 3v2m0 3v1"/></svg>Tickets</a>
+          <a href="/team/"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M16 5a3 3 0 0 1 0 6m1 3c2.5.5 4 2.5 4 6"/></svg>Team</a>
+          <a href="/community/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>Community</a>
+        </nav>
+        <div class="header-auth" data-account-control><a class="header-signin" href="/signin/">Sign in</a></div>
+      </div>
+    </header>
+
+    <div class="dashboard-workspace">
+      <aside class="dashboard-sidebar">
+        <nav aria-label="Account dashboard">
+          <button type="button" data-view-target="overview"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</button>
+          <button type="button" data-view-target="profile"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 3-8 8-8s8 3 8 8"/></svg>Profile</button>
+          <button type="button" data-view-target="connections"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.1 1.1M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></svg>Connections</button>
+          <button type="button" data-view-target="accounts"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c0-4 2.3-7 6-7s6 3 6 7M15 15c3 0 5 2 5 5"/></svg>Accounts</button>
+          <button type="button" data-view-target="security"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>Security</button>
+          <button type="button" data-view-target="tickets"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>Tickets</button>
+        </nav>
+        <div class="dashboard-sidebar-footer">
+          <div class="dashboard-sidebar-actions">
+            <button type="button" data-switch-account><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h11l-3-3m3 3-3 3M17 17H6l3 3m-3-3 3-3"/></svg>Switch account</button>
+            <button type="button" data-sign-out><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5m5 5H3m12-9h5v18h-5"/></svg>Sign out</button>
+          </div>
+        </div>
+      </aside>
+
+      <main id="dashboard-main" class="dashboard-main">
+        <section data-dashboard-view="overview" aria-labelledby="overview-title">
+          <header class="dashboard-heading"><h1 id="overview-title" tabindex="-1">Overview</h1></header>
+          <section class="dashboard-section" aria-labelledby="account-summary-title">
+            <header><div><h2 id="account-summary-title">Account</h2><p>The identity used across Bloom services.</p></div></header>
+            <div class="account-summary-row"><div data-user-avatar></div><div><strong data-user-name>Bloom account</strong><span data-user-email></span></div><button type="button" data-view-target="profile">Edit profile</button></div>
+          </section>
+          <section class="dashboard-section" aria-labelledby="access-summary-title">
+            <header><div><h2 id="access-summary-title">Access</h2><p>Review how this account is connected and where it is saved.</p></div></header>
+            <button class="dashboard-route-row" type="button" data-view-target="connections"><span class="route-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.1 1.1M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></svg></span><span><strong>Connected accounts</strong><small data-provider-summary>Checking sign-in methods…</small></span><svg class="route-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button class="dashboard-route-row" type="button" data-view-target="accounts"><span class="route-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c0-4 2.3-7 6-7s6 3 6 7M15 15c3 0 5 2 5 5"/></svg></span><span><strong>Saved accounts</strong><small data-saved-account-summary>Checking this browser…</small></span><svg class="route-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+            <button class="dashboard-route-row" type="button" data-view-target="security"><span class="route-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></span><span><strong>Security</strong><small>Sessions and account access</small></span><svg class="route-chevron" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+          </section>
+        </section>
+
+        <section data-dashboard-view="profile" hidden aria-labelledby="profile-title">
+          <header class="dashboard-heading"><h1 id="profile-title" tabindex="-1">Profile</h1></header>
+          <section class="dashboard-section" aria-labelledby="personal-information-title">
+            <header><div><h2 id="personal-information-title">Personal information</h2><p>Change the name shown on your Bloom account.</p></div></header>
+            <div class="settings-row"><div><h3>Display name</h3><p>Used on Bloom account surfaces.</p></div><div class="setting-control"><label for="display-name">Name</label><input id="display-name" type="text" minlength="2" maxlength="64" autocomplete="name" /><button type="button" data-save-profile>Save</button></div></div>
+            <div class="settings-row static-setting"><div><h3>Email address</h3><p data-user-email></p></div><span>Managed by your sign-in provider</span></div>
+          </section>
+        </section>
+
+        <section data-dashboard-view="connections" hidden aria-labelledby="connections-title">
+          <header class="dashboard-heading"><h1 id="connections-title" tabindex="-1">Connections</h1></header>
+          <section class="dashboard-section" aria-labelledby="signin-methods-title"><header><div><h2 id="signin-methods-title">Sign-in methods</h2><p>Providers are linked only when you connect them here.</p></div></header><div class="connection-list" data-connection-list></div></section>
+          <div class="connection-help">
+            <div class="connection-help-popover" data-connection-help-popover hidden><p>Your account always needs one sign-in method. Connecting another provider does not share its password or grant access to unrelated provider data.</p></div>
+            <button type="button" data-connection-help aria-expanded="false" aria-label="About connected accounts"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg></button>
+          </div>
+        </section>
+
+        <section data-dashboard-view="accounts" hidden aria-labelledby="accounts-title">
+          <header class="dashboard-heading"><h1 id="accounts-title" tabindex="-1">Accounts</h1></header>
+          <section class="dashboard-section" aria-labelledby="saved-accounts-title"><header><div><h2 id="saved-accounts-title">Saved accounts</h2><p>Accounts available in this browser.</p></div><button type="button" data-switch-account><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add account</button></header><div class="device-account-list" data-device-account-list></div></section>
+        </section>
+
+        <section data-dashboard-view="security" hidden aria-labelledby="security-title">
+          <header class="dashboard-heading"><h1 id="security-title" tabindex="-1">Security</h1></header>
+          <section class="dashboard-section" aria-labelledby="sessions-title"><header><div><h2 id="sessions-title">Sessions</h2><p>Manage access outside this browser.</p></div></header><div class="settings-row"><div><h3>Other sessions</h3><p>Keep this browser signed in and revoke every other active session.</p></div><button type="button" data-revoke-sessions>Sign out other sessions</button></div><div class="settings-row"><div><h3>Add another account</h3><p>Keep this account available while signing in to another one.</p></div><button type="button" data-switch-account>Add account</button></div></section>
+          <section class="dashboard-section danger-section" aria-labelledby="danger-title"><header><div><h2 id="danger-title">Danger zone</h2><p>These actions cannot be undone.</p></div></header><div class="settings-row"><div><h3>Delete account</h3><p>Permanently remove this Bloom account and all provider connections.</p></div><button type="button" data-delete-account>Delete account</button></div></section>
+        </section>
+
+        <section data-dashboard-view="tickets" hidden aria-labelledby="tickets-title">
+          <header class="dashboard-heading"><h1 id="tickets-title" tabindex="-1">Tickets</h1></header>
+          <div class="ticket-screen" data-ticket-home>
+            <section class="dashboard-section ticket-list-section" aria-labelledby="your-tickets-title">
+              <header><div><h2 id="your-tickets-title">Your conversations</h2><p>Private support between you and the Bloom team.</p></div><button type="button" data-new-ticket>New ticket</button></header>
+              <div class="ticket-list" data-ticket-list><p class="ticket-empty">Loading your tickets…</p></div>
+            </section>
+          </div>
+          <section class="dashboard-section ticket-compose" data-ticket-compose hidden aria-labelledby="new-ticket-title">
+            <header><div><h2 id="new-ticket-title">Start a conversation</h2><p>Explain what happened and include the exact steps that led to it.</p></div><button type="button" class="quiet-button" data-close-compose>Cancel</button></header>
+            <form data-ticket-create-form>
+              <label>Topic<select name="category" required><option value="technical">Technical issue</option><option value="launcher">Launcher or update</option><option value="cosmetics">Locker or cosmetics</option><option value="account">Account</option><option value="other">Something else</option></select></label>
+              <label>Subject<input name="subject" minlength="4" maxlength="100" required placeholder="A short summary" /></label>
+              <label>What happened?<textarea name="message" minlength="10" maxlength="5000" required placeholder="Include what you expected, what happened instead, and anything you already tried."></textarea></label>
+              <div class="ticket-form-footer"><span>Never include passwords, access tokens, or private keys.</span><button type="submit">Send ticket</button></div>
+            </form>
+          </section>
+          <section class="dashboard-section ticket-thread" data-ticket-thread hidden aria-live="polite">
+            <header><div><h2 data-ticket-subject>Ticket</h2><p><span data-ticket-category></span><span class="ticket-status" data-ticket-status></span></p></div><button type="button" class="thread-back" data-ticket-back aria-label="Back to tickets"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button></header>
+            <div class="ticket-messages" data-ticket-messages></div>
+            <form class="ticket-reply" data-ticket-reply-form><label class="sr-only" for="ticket-reply-message">Reply</label><textarea id="ticket-reply-message" name="message" maxlength="5000" required rows="1" placeholder="Write a reply…"></textarea><button type="submit" aria-label="Send reply" title="Send reply"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 3-7.6 18-3.2-7.2L3 10.6 21 3Z"/><path d="m10.2 13.8 4.5-4.5"/></svg></button></form>
+          </section>
+      </main>
+    </div>
+    <div class="site-notification" data-site-notification hidden><span></span></div>
+  </body>
+</html>

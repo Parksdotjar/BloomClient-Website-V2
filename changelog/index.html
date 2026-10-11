@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Bloom Client changelog and release history." />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self' https://accounts.google.com https://github.com" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/changelog.js"></script>
+    <script type="module" src="/src/account-header.js"></script>
+    <title>Changelog — Bloom Client</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="/" aria-label="Bloom Client home"><img src="/bloom-flower.png" alt="" width="44" height="44" /><span>Bloom Client</span></a>
+      <nav aria-label="Primary navigation"><a href="/#features"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>The client</a><a class="active" href="/changelog/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 8h6m-6 4h6m-6 4h4"/></svg>Changelog</a><a href="/tickets/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h14v5a3 3 0 0 0 0 6v5H5v-5a3 3 0 0 0 0-6V4Z"/><path d="M12 7v2m0 3v2m0 3v1"/></svg>Tickets</a><a href="/team/"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M16 5a3 3 0 0 1 0 6m1 3c2.5.5 4 2.5 4 6"/></svg>Team</a><a href="/community/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>Community</a></nav>
+      <div class="header-auth" data-account-control><a class="header-signin" href="/signin/">Sign in</a></div>
+    </div></header>
+
+    <main id="main" class="changelog-page">
+      <header class="changelog-intro">
+        <div><span class="eyebrow">CHANGELOG</span><h1>Bloom Client updates</h1><p>New features, improvements, and fixes from each release.</p></div>
+        <a class="changelog-download" href="https://github.com/Parksdotjar/BloomClient-V2/releases/latest">Download latest<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/></svg></a>
+      </header>
+
+      <div class="changelog-controls">
+        <span>Filter updates</span>
+        <div class="change-filters" role="group" aria-label="Filter release notes">
+          <button type="button" class="active" data-filter="all" aria-pressed="true">Everything</button>
+          <button type="button" data-filter="new" aria-pressed="false">New</button>
+          <button type="button" data-filter="improved" aria-pressed="false">Improved</button>
+          <button type="button" data-filter="fixed" aria-pressed="false">Fixed</button>
+        </div>
+      </div>
+      <p class="filter-status sr-only" aria-live="polite">Showing all changes</p>
+
+      <section class="release-timeline" aria-label="Release history">
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker current" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.1.6</h2><span class="latest-label">Latest</span><time datetime="2026-10-08">October 8, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.1.6" aria-label="View Bloom Client 1.1.6 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New Features</h3><ul>
+              <li>Added Social with Bloom-account friends, encrypted direct messages, private groups of up to ten people, replies, editing, per-person reactions, screenshot sharing, pinned messages, and automatic 24-hour cleanup for unpinned history.</li>
+              <li>Added optional encryption verification with matching safety numbers, QR comparison, key-change detection, and a contained review flow if a friend's device identity ever changes.</li>
+              <li>Added friend-only instance sharing from every instance menu. Send a standalone copy or keep a pack synced with Can view and Can edit access.</li>
+              <li>Added real synced-pack access management so owners can review members and pending invitations, change permissions, remove access, and invalidate unused invites.</li>
+              <li>Added Global File Sync for safely sharing game options, server lists, voice-chat settings, resource packs, and shader packs between selected instances with backups and conflict protection.</li>
+              <li>Added a managed client cache for Modrinth pages, instance content and artwork, skins, capes, cloaks, and thumbnails, with capacity, location, usage, and clear controls in Settings.</li>
+              <li>Added a first-run Microsoft onboarding flow with a verified copyable device code, direct browser handoff, successful-account confirmation, and a Restart onboarding setting for testing.</li>
+              <li>Added a right-side mod detail drawer with descriptions, dependencies, compatible versions, files, and a full-width install state without losing the current list position.</li>
+              <li>Added automatic required-dependency installation for Modrinth mods while reusing compatible dependencies already active in the instance.</li>
+              <li>Added a persisted compact sidebar mode and moved AutoTune into the new Utilities hub alongside Global File Sync.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Performance Improvements</h3><ul>
+              <li>Replaced Social's repeated full refresh with realtime incremental delivery and an adaptive repair fallback, reducing repeated network and decryption work.</li>
+              <li>Made outgoing messages and reactions appear immediately in a dimmed pending state, then become fully visible only after real delivery is confirmed.</li>
+              <li>Expanded Modrinth browsing to 50 results per page, preloaded the next two pages and their artwork, and revealed uncached results in smooth groups of ten.</li>
+              <li>Kept installed instance content hydrated between views so revisiting an instance no longer rebuilds the list or briefly flashes an empty state.</li>
+              <li>Kept Locker wardrobes and cached cosmetic media populated during background refreshes, reducing repeated requests, rate limits, and category flicker.</li>
+              <li>Improved rapid Social sending with ordered encrypted queues, idempotent retries, and reconciliation protection for message bursts, reactions, and pins.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Interface &amp; Animation Improvements</h3><ul>
+              <li>Replaced message hover controls with one compact right-click menu for Reply, reactions, Pin or Unpin, and sender-only Edit.</li>
+              <li>Improved Social loading and account switching so friends, groups, invitations, conversations, and decrypted history are ready before the page is revealed.</li>
+              <li>Refined the sharing wizard and direct-message invitation card with real instance artwork, direct permission labels, and compact accept or decline actions.</li>
+              <li>Rebuilt the instance three-dot menu as an attached action drawer with instance identity, grouped folder and sharing actions, duplication, settings, and guarded deletion.</li>
+              <li>Added optional recent Mod searches for the installed list and Add Mods catalog, stored locally and disabled by default.</li>
+              <li>Made Mods, Resource Packs, and Shaders tabs larger and allowed the selected surface to fill its complete tab segment.</li>
+              <li>Refined account and profile surfaces with plain white action icons, a cleaner edge-to-edge Log out footer, and a full-height profile artwork switch interaction.</li>
+              <li>Preserved real Modrinth project artwork throughout active and completed downloads instead of replacing it with a generic content icon.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="fixed"><h3>Fixes</h3><ul>
+              <li>Fixed confirmed messages disappearing, stale refreshes restoring old conversations or pin state, and rapid sends arriving out of order.</li>
+              <li>Fixed Social appearing empty when one encrypted envelope failed and group messages failing after a device identity rotated under the same device ID.</li>
+              <li>Fixed reactions collapsing different people into one entry, showing an incorrect count, or adding again instead of toggling the current person's reaction off.</li>
+              <li>Fixed account changes briefly showing the previous account's Social data and prevented loading from ending before the new account is fully hydrated.</li>
+              <li>Fixed partial Social control hitboxes, pinned and member drawer spacing, sidebar gaps, unexpected drawer closing, and controls rendering beneath other layers.</li>
+              <li>Fixed the mod drawer remaining on Install after completion and prevented duplicate installation of compatible dependencies already present in an instance.</li>
+              <li>Fixed repeated Locker requests causing Minecraft rate limits, sharpened official cape rendering, and made wardrobe refresh explicitly user-controlled.</li>
+              <li>Fixed completed downloads losing their Modrinth artwork after navigation or a client restart.</li>
+              <li>Fixed Microsoft onboarding clipboard false-positives, first-click copy failures, duplicated focus borders, and uneven rounded outlines.</li>
+            </ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.1.5</h2><time datetime="2026-10-05">October 5, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.1.5" aria-label="View Bloom Client 1.1.5 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New</h3><ul>
+              <li>Reintroduced the redesigned Locker with dedicated Cloaks, Capes, and Skins sections.</li>
+              <li>Added Cloaks, official Minecraft cape support, skin selection, and custom skin importing.</li>
+              <li>Added a rotatable player preview using the signed-in account's actual Minecraft skin.</li>
+              <li>Added the cosmetics backend for accounts, equipped cosmetics, texture storage, and delivery.</li>
+              <li>Added custom elytra textures, Bloom presence, and badge support.</li>
+              <li>Added a bottom update notification and full-screen installation transition.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Improved</h3><ul>
+              <li>Redesigned cosmetic cards with clearer equipped states, compact controls, and smoother color transitions.</li>
+              <li>Connected equipped Cloaks to Bloom Cosmetics for supported Minecraft instances.</li>
+              <li>Improved cloak texture loading, caching, refresh behavior, and updater feedback.</li>
+              <li>Refined the OLED-black interface, instance cards, dropdowns, sidebar controls, window buttons, and account surfaces.</li>
+              <li>Added quick play when hovering over a sidebar instance image and simplified several text controls into icons.</li>
+              <li>Integrated the cosmetics renderer into Bloom's normal build process.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="fixed"><h3>Fixed</h3><ul>
+              <li>Fixed spacing and alignment issues throughout Locker and instance pages.</li>
+              <li>Fixed cosmetic indicators using unnecessary card space and dropdown surfaces ending too early.</li>
+              <li>Fixed window controls moving on hover and inconsistent sidebar coverage around the account dock.</li>
+              <li>Fixed visible lines at the end of fades and blank fallback player models in Locker.</li>
+              <li>Fixed release builds missing Locker and Bloom Cosmetics integration.</li>
+            </ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.1.4</h2><time datetime="2026-08-21">August 21, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.1.4" aria-label="View Bloom Client 1.1.4 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New</h3><ul>
+              <li>Added shared drag-and-drop support for mods, resource packs, and shaders.</li>
+              <li>Connected the Game Directory picker to the Windows folder selector and the real instance destination.</li>
+              <li>Made custom profile pictures universal across connected Microsoft accounts.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Improved</h3><ul>
+              <li>Rebuilt Spotlight Home around selecting and launching an instance.</li>
+              <li>Redesigned instance cards, sidebar instances, content tabs, search, filters, full-bleed artwork, and action menus.</li>
+              <li>Rebuilt AutoTune into a five-stage workflow with genuine progress tracking and clearer explanations.</li>
+              <li>Reworked the Modrinth browser with improved search, pagination, version selection, and importing.</li>
+              <li>Moved Java, memory, JVM, resolution, and launcher settings into Advanced Options.</li>
+              <li>Reworked custom backgrounds around Image Opacity, Interface Darkness, and Element Darkness.</li>
+              <li>Standardized pagination, dropdowns, menus, buttons, tabs, and lightweight animations.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="fixed"><h3>Fixed</h3><ul>
+              <li>Fixed enabled toggles displaying their thumb on the wrong side.</li>
+              <li>Fixed selectors, status messages, dropdowns, and floating menus being clipped or misaligned.</li>
+              <li>Fixed the Modpacks close button breaking after leaving version selection.</li>
+              <li>Fixed AutoTune progress dots failing to follow the real workflow.</li>
+              <li>Fixed compact action menus overlapping cards or showing unnecessary scrollbars.</li>
+              <li>Fixed the Windows taskbar icon appearing tiny or blurry.</li>
+              <li>Fixed controls that appeared functional without updating the underlying setting or destination.</li>
+            </ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.1.2</h2><time datetime="2026-07-17">July 17, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.1.2" aria-label="View Bloom Client 1.1.2 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="fixed"><h3>Fixed</h3><ul><li>Reduced the number of concurrent tasks started while opening the launcher.</li></ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.1.1</h2><time datetime="2026-07-17">July 17, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.1.1" aria-label="View Bloom Client 1.1.1 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New</h3><ul>
+              <li>Added animated cosmetics, cosmetic colorways, and selectable bracelet arms.</li>
+              <li>Added Spotlight Home and made it the default.</li>
+              <li>Added custom backgrounds with opacity, sidebar blur, and button blur.</li>
+              <li>Added Double Click to Play, Add from Modrinth, instance action menus, and a live Downloads indicator.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Improved</h3><ul>
+              <li>Redesigned Settings, Shop, empty states, and instance cards with Bloom's layered header style.</li>
+              <li>Added connected dropdown animations, alternating mod rows, standardized toggles, and reliable loader icons.</li>
+              <li>Improved cosmetic rendering, catalog caching, and genuine download progress without increasing backend load.</li>
+              <li>Kept custom backgrounds and blur compatible with Ultra Performance Mode.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="fixed"><h3>Fixed</h3><ul>
+              <li>Fixed temporary catalog errors, wing orientation, and animation injection.</li>
+              <li>Fixed oversized colorway previews, clipped account confirmations, and disconnected Settings and Shop layers.</li>
+              <li>Fixed Downloads immediately showing 99 and Modrinth failing to recognize installed mods.</li>
+              <li>Fixed duplicate Back labels, blocked multi-download actions, and missing packaged loader images.</li>
+            </ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.1.0</h2><time datetime="2026-07-15">July 15, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.1.0" aria-label="View Bloom Client 1.1.0 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New</h3><ul><li>Added animated hats and wings.</li><li>Added multi-color support across cosmetics.</li></ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.0.9</h2><time datetime="2026-07-15">July 15, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.0.9" aria-label="View Bloom Client 1.0.9 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New</h3><ul>
+              <li>Added the Bloom Shop with free capes, 3D hats, and wings.</li>
+              <li>Added personal cosmetic collections with Shop, Equipped, cart, and Owned states.</li>
+              <li>Added automatic Bloom Cosmetics installation and live in-game cosmetic updates.</li>
+              <li>Added live catalogs and detailed 3D previews for every cosmetic.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Improved</h3><ul>
+              <li>Replaced large instance tabs with compact navigation and a separate Settings button.</li>
+              <li>Added detection for manually installed and modpack content, plus simultaneous content installation.</li>
+              <li>Improved instance-header spacing and reduced repeat catalog and account requests through caching.</li>
+              <li>Improved cosmetic loading during rapid navigation and temporary service issues.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="fixed"><h3>Fixed</h3><ul>
+              <li>Fixed newly published cosmetics not appearing and capes falling back to official Minecraft capes.</li>
+              <li>Fixed 3D hat textures, inside-out wings, and rapid category switching causing 502 errors.</li>
+              <li>Improved synchronization between Bloom Client, its cosmetic catalog, and Minecraft.</li>
+            </ul></section>
+          </div>
+        </article>
+
+        <article class="timeline-release" data-release>
+          <header class="release-heading">
+            <span class="timeline-marker" aria-hidden="true"></span>
+            <div class="release-title-line"><h2>Version 1.0.8</h2><time datetime="2026-07-14">July 14, 2026</time></div>
+            <a href="https://github.com/Parksdotjar/BloomClient-V2/releases/tag/v1.0.8" aria-label="View Bloom Client 1.0.8 on GitHub"><span>View release</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          </header>
+          <div class="release-card">
+            <section class="change-group" data-change-type="new"><h3>New</h3><ul>
+              <li>Added Modrinth browsing and one-click installation for resource packs and shaders.</li>
+              <li>Added a Button Pop Duration setting from 0 to 1000 milliseconds.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="improved"><h3>Improved</h3><ul>
+              <li>Replaced heavier WebGL skin previews with optimized 2D rendering where possible.</li>
+              <li>Reduced background work and expensive effects for lower-end computers.</li>
+              <li>Removed action delays and moved button feedback to lightweight hardware-accelerated animation.</li>
+              <li>Prevented repeated clicks from stacking animations and made feedback respect animation and performance settings.</li>
+              <li>Improved account-switch layering, folder-path handling, navigation, and installed-build stability.</li>
+            </ul></section>
+            <section class="change-group" data-change-type="fixed"><h3>Fixed</h3><ul>
+              <li>Fixed the Slim Arms toggle and custom Close button.</li>
+              <li>Fixed Show in Folder opening Documents instead of the selected instance.</li>
+              <li>Fixed Open Mods Folder so it uses the selected instance's real mods directory.</li>
+            </ul></section>
+          </div>
+        </article>
+      </section>
+
+      <div class="release-archive"><div><span class="eyebrow">OLDER RELEASES</span><p>Earlier installers and release records remain available on GitHub.</p></div><a href="https://github.com/Parksdotjar/BloomClient-V2/releases">Open release archive ↗</a></div>
+    </main>
+    <footer><span>© 2026 Bloom Client</span><div><a href="https://github.com/Parksdotjar/BloomClient-V2">Source code ↗</a><a href="/tickets/">Tickets</a></div></footer>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Approve Bloom Client Social access." />
+    <meta name="referrer" content="no-referrer" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/connect.js"></script>
+    <title>Connect Bloom Client</title>
+  </head>
+  <body class="auth-body">
+    <main class="connect-shell">
+      <section class="connect-panel" aria-labelledby="connect-title">
+        <img class="connect-flower" src="/bloom-flower.png" alt="" />
+        <h1 id="connect-title">Connect Bloom Client</h1>
+        <p class="connect-intro">Choose the Bloom account Social should use, then approve the connection.</p>
+        <div class="connect-accounts" data-connect-accounts aria-label="Bloom accounts"></div>
+        <div class="connect-permission">
+          <strong>Social access</strong>
+          <span>Use your name and profile picture for friends and encrypted direct messages.</span>
+        </div>
+        <div class="connect-actions">
+          <button type="button" class="connect-cancel" data-connect-cancel>Cancel</button>
+          <button type="button" class="connect-approve" data-connect-approve>Approve</button>
+        </div>
+        <p class="connect-status" data-connect-status aria-live="polite"></p>
+      </section>
+    </main>
+  </body>
+</html>

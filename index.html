@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Bloom Client. A Minecraft launcher with instance management, mods, and cosmetics." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self' https://accounts.google.com https://github.com" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/account-header.js"></script>
+    <title>Bloom Client</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#main" aria-label="Bloom Client home">
+          <img src="/bloom-flower.png" alt="" width="44" height="44" />
+          <span>Bloom Client</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#features"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>The client</a>
+          <a href="/changelog/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 8h6m-6 4h6m-6 4h4"/></svg>Changelog</a>
+<a href="/tickets/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h14v5a3 3 0 0 0 0 6v5H5v-5a3 3 0 0 0 0-6V4Z"/><path d="M12 7v2m0 3v2m0 3v1"/></svg>Tickets</a>
+          <a href="/team/"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M16 5a3 3 0 0 1 0 6m1 3c2.5.5 4 2.5 4 6"/></svg>Team</a>
+          <a href="/community/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>Community</a>
+        </nav>
+        <div class="header-auth" data-account-control><a class="header-signin" href="/signin/">Sign in</a></div>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-intro">
+          <h1 id="hero-title">Bloom Client</h1>
+          <p class="hero-summary">Manage instances, install content, tune performance, and launch from one place.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="https://github.com/Parksdotjar/BloomClient-V2/releases/latest">
+              <svg class="windows-mark" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z" /></svg>
+              Download for Windows
+            </a>
+            <a class="source-action" href="https://github.com/Parksdotjar/BloomClient-V2">Source</a>
+          </div>
+          <a class="scroll-cue" href="#features"><span>Scroll</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5" /></svg></a>
+        </div>
+        <figure class="client-frame" id="client">
+          <img src="/client-home.png" width="1593" height="959" alt="Bloom Client Home screen showing the instance launcher" fetchpriority="high" />
+        </figure>
+      </section>
+      <section class="product-info" id="features" aria-labelledby="product-info-title">
+        <header class="section-heading">
+          <span>BUILT INTO BLOOM</span>
+          <h2 id="product-info-title">Everything around the game,<br />in one client.</h2>
+          <p>Install content, keep instances separate, and carry the files you choose between them.</p>
+        </header>
+
+        <article class="showcase showcase-modrinth">
+          <div class="showcase-copy">
+            <span class="feature-label">MODRINTH</span>
+            <h3>Find and install content without leaving Bloom.</h3>
+            <p>Search Modrinth from the selected instance. Bloom limits results to the right Minecraft version and loader, then puts every file where it belongs.</p>
+            <ul class="plain-list">
+              <li>Mods and modpacks</li>
+              <li>Resource packs and shaders</li>
+              <li>Version and loader filtering</li>
+              <li>Installed content management</li>
+            </ul>
+          </div>
+          <figure class="feature-screen wide-screen">
+            <img src="/client-mods.png" width="896" height="390" alt="Bloom Client instance showing its installed mods and controls" loading="lazy" />
+          </figure>
+        </article>
+
+        <article class="showcase showcase-instances">
+          <figure class="feature-screen home-screen">
+            <img src="/client-home.png" width="1593" height="959" alt="Bloom Client Home screen with separate Minecraft instances" loading="lazy" />
+          </figure>
+          <div class="showcase-copy">
+            <span class="feature-label">INSTANCES</span>
+            <h3>Every setup stays in its own place.</h3>
+            <p>Create a separate instance for each Minecraft version, loader, modpack, or server setup. Each one keeps its own content, Java settings, memory, resolution, and game directory.</p>
+            <dl class="fact-list">
+              <div><dt>Content</dt><dd>Mods, packs, and shaders per instance</dd></div>
+              <div><dt>Runtime</dt><dd>Java, memory, and launch settings</dd></div>
+              <div><dt>Files</dt><dd>Dedicated game directory</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="showcase showcase-sync">
+          <div class="showcase-copy">
+            <span class="feature-label">GLOBAL FILE SYNC</span>
+            <h3>Choose what should stay consistent.</h3>
+            <p>Pick one source instance and the destinations that should receive its files. Bloom backs up existing copies before it replaces them.</p>
+            <ul class="plain-list two-column-list">
+              <li>Game options</li>
+              <li>Server list</li>
+              <li>Voice chat settings</li>
+              <li>Resource packs</li>
+              <li>Shader packs</li>
+            </ul>
+          </div>
+          <figure class="feature-screen sync-screen">
+            <img src="/client-sync.png" width="869" height="893" alt="Bloom Client Global File Sync configuration" loading="lazy" />
+          </figure>
+        </article>
+
+        <section class="more-tools" aria-labelledby="more-tools-title">
+          <header>
+            <span>MORE IN THE CLIENT</span>
+            <h3 id="more-tools-title">Useful when you need it.</h3>
+          </header>
+          <div class="tool-list">
+            <article><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 4-8.5 9H13l-3 7 8.5-10H11l3-6Z"/></svg><h4>AutoTune</h4><p>Measures the PC, builds a performance profile, and applies the selected settings to your instances.</p></article>
+            <article><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 4h8l1 4 3 2-2 10H6L4 10l3-2 1-4Z"/><path d="M9 4c0 2 1 3 3 3s3-1 3-3"/></svg><h4>Locker</h4><p>Manage Bloom cloaks, official Minecraft capes, and account skins from one place.</p></article>
+            <article><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="8" cy="12" r="3"/><circle cx="17" cy="6" r="3"/><circle cx="17" cy="18" r="3"/><path d="m10.5 10.5 4-3m-4 6 4 3"/></svg><h4>Pack sharing</h4><p>Share a configured pack, import it on another PC, and see anything that still needs manual attention.</p></article>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <span>© 2026 Bloom Client</span>
+      <div><a href="/privacypolicy/">Privacy</a><a href="/tos/">Terms</a><a href="https://github.com/Parksdotjar/BloomClient-V2">Source code <span aria-hidden="true">↗</span></a><a href="/tickets/">Tickets</a></div>
+    </footer>
+  </body>
+</html>

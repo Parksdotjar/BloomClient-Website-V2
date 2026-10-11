@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Bloom Client owner support dashboard." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self'; script-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/account-header.js"></script>
+    <script type="module" src="/src/owner.js"></script>
+    <title>Owner Dashboard — Bloom Client</title>
+  </head>
+  <body class="dashboard-body owner-body">
+    <a class="skip-link" href="#owner-main">Skip to owner dashboard</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="brand" href="/" aria-label="Bloom Client home"><img src="/bloom-flower.png" alt="" width="44" height="44" /><span>Bloom Client</span></a>
+      <nav aria-label="Primary navigation"><a href="/#features"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>The client</a><a href="/changelog/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 8h6m-6 4h6m-6 4h4"/></svg>Changelog</a><a href="/tickets/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h14v5a3 3 0 0 0 0 6v5H5v-5a3 3 0 0 0 0-6V4Z"/><path d="M12 7v2m0 3v2m0 3v1"/></svg>Tickets</a><a href="/team/"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-4 2-7 6-7s6 3 6 7M16 5a3 3 0 0 1 0 6m1 3c2.5.5 4 2.5 4 6"/></svg>Team</a><a href="/community/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>Community</a></nav>
+      <div class="header-auth" data-account-control><a class="header-signin" href="/signin/">Sign in</a></div>
+    </div></header>
+    <div class="dashboard-workspace">
+      <aside class="dashboard-sidebar owner-sidebar">
+        <div class="owner-rail-label">Owner</div>
+        <nav aria-label="Owner dashboard">
+          <button type="button" data-owner-view="overview" class="active"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</button>
+          <button type="button" data-owner-view="tickets"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5h16v12H9l-5 4V5Z"/><path d="M8 9h8m-8 4h5"/></svg>Tickets<span class="owner-count" data-open-count hidden></span></button>
+        </nav>
+        <div class="dashboard-sidebar-footer"><div class="dashboard-sidebar-actions"><a href="/dashboard/"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>Account dashboard</a></div></div>
+      </aside>
+      <main id="owner-main" class="dashboard-main">
+        <section data-owner-panel="overview"><header class="dashboard-heading"><h1 tabindex="-1">Overview</h1></header>
+          <div class="owner-stat-grid"><button type="button" data-owner-open-filter="waiting_on_support"><span data-stat-open>—</span><strong>Needs a reply</strong><small>Waiting for Bloom Support</small></button><button type="button" data-owner-open-filter="waiting_on_user"><span data-stat-pending>—</span><strong>Waiting on users</strong><small>Bloom has replied</small></button><button type="button" data-owner-open-filter="closed"><span data-stat-closed>—</span><strong>Closed</strong><small>Completed conversations</small></button></div>
+          <section class="dashboard-section owner-recent"><header><div><h2>Recent tickets</h2><p>The latest support conversations across Bloom.</p></div><button type="button" data-owner-view="tickets">View queue</button></header><div data-owner-recent-list><p class="ticket-empty">Loading queue…</p></div></section>
+        </section>
+        <section data-owner-panel="tickets" hidden><header class="dashboard-heading"><h1 tabindex="-1">Tickets</h1></header>
+          <div class="owner-ticket-layout">
+            <section class="dashboard-section owner-queue"><header><div><h2>Support queue</h2><p data-owner-queue-summary>All conversations</p></div><select aria-label="Filter tickets" data-owner-filter><option value="">All tickets</option><option value="waiting_on_support">Needs a reply</option><option value="waiting_on_user">Waiting on user</option><option value="closed">Closed</option></select></header><div class="ticket-list" data-owner-ticket-list><p class="ticket-empty">Loading queue…</p></div></section>
+            <section class="dashboard-section owner-thread-panel" data-owner-thread><div class="owner-thread-empty"><span>✦</span><strong>Select a ticket</strong><p>Open a conversation from the queue to review it and reply.</p></div></section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="site-notification" data-site-notification hidden><span></span></div>
+  </body>
+</html>
